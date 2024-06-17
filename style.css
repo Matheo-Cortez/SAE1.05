@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'comfor_regul';
+    src: url('font/comfortaa_regular.woff2') format('woff2'),
+    url('font/comfortaa_regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'comfor_bold';
+    src: url('font/comfortaa_bold.woff2') format('woff2'),
+    url('font/comfortaa_bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    background-color: #120214;
+    font-family: 'comfor_regul', arial, sans-serif;
+    color:#f2f2f2;
+}
+
+figure {
+    font-size: 1.5rem;
+    color:#f2f2f2;
+    text-align: center;
+}
+
+header nav{
+    display: inline-flex;
+    flex-direction: row;
+    align-items:center;
+}
+
+header img{
+    width: 20rem;
+    height: 3rem;
+}
+
+
+header nav figure{
+    display: inline-block;
+    border: 2px solid #f2f2f2 ;
+    border-radius: 10px;
+    margin: 0 1em;
+    width: 10em;
+
+}
+
+header nav figcaption{
+    display: inline;
+    font-size: 20px;
+}
+
+header nav img{
+    width: 30px;
+    height: 30px;
+}
+
+header nav ul{
+    font-family: 'comfor_regul', arial, sans-serif;
+    font-size: 1.5rem;
+    color:#f2f2f2;
+    list-style-type: none;
+    display: inline-flex;
+}
+
+header nav ul li{
+    margin: 0 0.5em;
+    padding:0 0.5em;
+}
+/* --------------------Format Desktop-------------------- */
+@media screen and (max-width: 1280px){
+    main img {
+        width: 11rem;
+        height: 15rem;
+        border:2px solid #f2f2f2 ;
+    }
+
+    main nav{
+        display: inline-flex;
+    }
+
+    main nav figure{
+        width: 11rem;
+        height: 15rem;
+    }
+    /* --------------------Carrousel-------------------- */
+    header div img{
+        display: flex;
+        width: 1090px;
+        height: 355px;
+    }
+    header nav+div{
+        display: flex;
+        justify-content: center;
+    }
+    .Carrousel{
+        width: 1090px;
+        overflow: hidden;
+    }
+    .Slides {
+        width: calc(1090px*5);
+        animation: glisse 10s infinite;
+    }
+    .slide {
+        float:left;
+    }
+    @keyframes glisse {
+        0% {
+            transform: translateX(0);
+        }
+        20% {
+            transform: translateX(-1090px);
+        }
+        40% {
+            transform: translateX(-2180px);
+        }
+        60% {
+            transform: translateX(-3270px);
+        }
+        80% {
+            transform: translateX(-4360px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
+
+/* --------------------Format Smartphone-------------------- */
+@media screen and (max-width: 428px){ 
+    .Carrousel{
+        position: fixed;
+        visibility: hidden;
+        z-index: -1;
+    }
+    
+    main img {
+        width: 11rem;
+        height: 15rem;
+        border:2px solid #f2f2f2 ;
+    }
+
+    main nav{
+        display: inline-flex;
+        width: 100%;
+        justify-content:space-between ;
+        flex-wrap: wrap;
+    }
+
+    main nav figure{
+        width: 11rem;
+        margin: 2em 0;
+    }
+
+    main nav figure{
+        order:1;
+    }
+
+    main nav figure+figure{
+        order:0;
+    }
+    main nav figure+figure+figure{
+        order:-2;
+    }
+
+    main nav figure+figure+figure+figure{
+        order:0;
+    }
+    main nav figure+figure+figure+figure+figure{
+        order:1;
+    }
+}
